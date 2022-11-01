@@ -1,12 +1,16 @@
-import { Controller, Get } from '@nestjs/common';
+import {Controller, Get, Param, Post} from '@nestjs/common';
 import { AppService } from './app.service';
+import {ApiParam, ApiTags} from "@nestjs/swagger";
+import {SlugDto} from "./app.dto";
 
-@Controller()
+@ApiTags('sample')
+@Controller('sample')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
+  @ApiParam({ name: 'slug', type: String })
+  @Post(':slug/')
+  postHello(@Param('slug') slug: SlugDto): string {
     return this.appService.getHello();
   }
 }

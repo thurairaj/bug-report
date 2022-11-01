@@ -1,0 +1,43 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/bug/sample/{slug}": {
+      "post": {
+        "operationId": "AppController_postHello",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "sample"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Bug report API spec",
+    "description": "@ApiParam unexpected behaviour | [swagger.json](swagger.json) | [swagger-2.0.json](swagger-2.0.json)",
+    "version": "0.0.1",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [
+    {
+      "url": "http://127.0.0.1:3111"
+    }
+  ],
+  "components": {
+    "schemas": {}
+  }
+}
